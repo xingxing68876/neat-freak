@@ -23,19 +23,19 @@
 | 项目级 override | `AGENTS.override.md`(若存在,覆盖同目录 AGENTS.md) |
 | Skills 目录 | `~/.codex/skills/<name>/SKILL.md` 或项目内 `.codex/skills/<name>/` |
 
-Codex 没有独立的"记忆文件 + 索引"机制,所有跨会话信息都直接写在 `AGENTS.md` 里。同步时把"项目事实"那部分内容统一放 AGENTS.md。
+Codex 跨会话信息以 `AGENTS.md` 为主(新版本另有 memories 功能,留意别漏);同步时把"项目事实"那部分内容统一放 AGENTS.md。
 
-发现项目里有 `TEAM_GUIDE.md` 或 `.agents.md` 也要看——这是 Codex 的 fallback 文件名。
+发现项目里有 `TEAM_GUIDE.md` 或 `.agents.md` 也要看——它们是 Codex 的 fallback 指令文件名(仅当出现在 Codex 的 fallback 配置中才按指令文件对待)。
 
 ## OpenClaw
 
 | 用途 | 路径 |
 |---|---|
 | 用户级 skills | `~/.openclaw/skills/<name>/SKILL.md`（首次运行自动创建） |
-| 项目级 skills | `.openclaw/skills/<name>/SKILL.md`（仓库根目录下） |
-| Workspace skills | 当前 workspace 的 `skills/` 目录 |
+| Workspace skills | `<workspace>/skills/`、`<workspace>/.agents/skills/` |
+| 全局 agents skills | `~/.agents/skills/` |
 
-**加载优先级**：workspace > project-agent > personal-agent > managed/local > bundled > extra dirs。同名 skill 高优先级覆盖低优先级。
+**加载优先级**(同名 skill 高优先级覆盖低优先级):`<workspace>/skills` → `<workspace>/.agents/skills` → `~/.agents/skills` → `~/.openclaw/skills` → bundled → `skills.load.extraDirs` 额外目录。
 
 OpenClaw 没有独立的"记忆文件 + 索引"机制，跨会话信息可放在项目根的 markdown（CLAUDE.md / AGENTS.md / 等价文件）里，参照 Codex 的做法。frontmatter 支持 `metadata.openclaw` 字段做加载时的 gating（按 OS、环境变量、二进制依赖筛选），但不是 neat-freak 必需的。
 
@@ -45,10 +45,10 @@ OpenClaw 没有独立的"记忆文件 + 索引"机制，跨会话信息可放在
 |---|---|
 | 全局配置 | `~/.config/opencode/` |
 | 项目配置 | `.opencode/` |
-| Skills 目录(项目) | `.opencode/skills/`、`.claude/skills/`、`.codex/skills/` 都会被扫描 |
+| Skills 目录(项目) | `.opencode/skills/`、`.claude/skills/`、`.agents/skills/` 都会被扫描 |
 | Skills 目录(全局) | `~/.config/opencode/skills/`、`~/.claude/skills/`、`~/.codex/skills/` |
 
-OpenCode 同时读取 Claude Code 和 Codex 的目录,所以同一个 skill 装在 `~/.claude/skills/` 下的话三家都能识别。OpenClaw 走自己的 `~/.openclaw/skills/`，需要单独装一份（或用符号链接）。
+OpenCode 会扫 `.claude/skills/` 等多个目录,所以同一个 skill 装在 `~/.claude/skills/` 下 Claude Code 与 OpenCode 都能识别(Codex 认的是 `.codex/skills/` 与 `~/.codex/skills/`,要 Codex 也用就装到那或加链接)。OpenClaw 走自己的 `~/.openclaw/skills/`，需要单独装一份（或用符号链接）。
 
 ## 如果当前 agent 没有独立记忆系统
 

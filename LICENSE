@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2026 xingxing68876
+Copyright (c) 2026 数字生命卡兹克 (original author of neat-freak, from KKKKhazix/khazix-skills)
+Copyright (c) 2026 xingxing68876 (modifications and packaging for this repository)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -11,11 +12,6 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
-The prompts in this repository originate from the article
-"12个高价值AI Prompt合集" by 卡兹克 (WeChat official account "数字生命卡兹克",
-August 2026), shared openly by the original author. Redistribution should
-retain the attribution in README.md.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
