@@ -1,4 +1,4 @@
-# neat-freak · 洁癖
+# 收尾 · wrap-up
 
 **A cross-platform end-of-session knowledge sync skill for AI agents.**
 
@@ -42,18 +42,18 @@ AI 协作开发里,**代码可以随时重写,但文档和记忆是跨会话、�
 **方式一:全局安装(所有项目可用)**
 
 ```bash
-git clone https://github.com/xingxing68876/neat-freak ~/.claude/skills/neat-freak
+git clone https://github.com/xingxing68876/wrap-up ~/.claude/skills/wrap-up
 ```
 
 **方式二:项目级安装(仅当前项目)**
 
 ```bash
-git clone https://github.com/xingxing68876/neat-freak .claude/skills/neat-freak
+git clone https://github.com/xingxing68876/wrap-up .claude/skills/wrap-up
 ```
 
-**方式三:手动**——下载本仓库,把 `neat-freak` 文件夹整个丢进 `~/.claude/skills/`(Windows:`C:\Users\<你>\.claude\skills\`)。
+**方式三:手动**——下载本仓库,把 `wrap-up` 文件夹整个丢进 `~/.claude/skills/`(Windows:`C:\Users\<你>\.claude\skills\`)。
 
-装完重启 Claude Code,输入 `/neat-freak` 验证。
+装完重启 Claude Code,输入 `/wrap-up` 验证。
 
 > **其他 agent**:`.codex/skills/`、`.opencode/skills/` 也认这个目录结构;OpenClaw 装 `~/.openclaw/skills/`。路径速查见 [references/agent-paths.md](references/agent-paths.md)。
 
@@ -61,7 +61,7 @@ git clone https://github.com/xingxing68876/neat-freak .claude/skills/neat-freak
 
 | 你说 | 它做 |
 |---|---|
-| `/neat-freak` | 跑完整收尾仪式(流程见下表) |
+| `/wrap-up` | 跑完整收尾仪式(流程见下表) |
 | 「收尾」「定稿」「复盘」「同步一下」「整理文档」 | 同上(skill 自动接,「定稿」会先完成你的主任务再追加仪式) |
 | 「更新记忆」「记忆里有条过期了」 | 以记忆层为重点跑一遍完整同步 |
 | 「新人能直接上手吗」 | 以 docs 受众标准为重点跑一遍完整同步 |

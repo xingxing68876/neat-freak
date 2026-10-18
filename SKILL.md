@@ -1,10 +1,10 @@
 ---
-name: neat-freak
+name: wrap-up
 description: >
   End-of-session knowledge cleanup with OCD-level rigor — reconciles project docs
   (CLAUDE.md, README.md, docs/) and agent memory against the code so nothing rots.
   会话结束后对项目文档和记忆进行洁癖级审查与同步。MUST trigger when the user says:
-  "sync up", "tidy up docs", "update memory", "clean up docs", "/sync", "/neat", "同步一下",
+  "sync up", "tidy up docs", "update memory", "clean up docs", "/sync", "/wrap-up", "同步一下",
   "整理文档", "整理一下", "更新记忆", "梳理一下", "收尾", "定稿", "复盘", "这个阶段做完了",
   "新人能直接上手", or any phrase suggesting a dev milestone where knowledge needs
   reconciliation. "定稿" scenario = finish the user's primary task first, then append this
@@ -14,7 +14,7 @@ description: >
   Claude Code, OpenAI Codex, OpenCode, and OpenClaw.
 ---
 
-# 洁癖 — Knowledge Base Neat-Freak
+# 收尾 — Knowledge Wrap-Up
 
 > **Cross-platform Agent Skill** — Claude Code · OpenAI Codex · OpenCode · OpenClaw 通用。
 > 跨平台 SKILL.md，遵循开放 Agent Skill 规范。
@@ -209,7 +209,7 @@ API 速查表、环境变量表、术语表是高频查询的结构化信息，*
 - **用户快评（收尾必问）**：收尾时问一句「本次 1~5 打几分？」——用户分数覆盖 AI 自评分，以用户为准。
 - **述职触发**：累计 ≥20 条 → 主动提议跑一轮统计复盘（哪类任务返工多 / 哪类任务分低 / 哪类问题重复出现 → 整改建议回流到规则与 skill）。只记录不回流不叫迭代。
 
-**触发方式**：`/neat-freak` 命令；或会话中出现收尾意图关键词（「收尾」「定稿」「复盘」「总结一下」）且当前任务已完结时执行本 skill。「定稿」场景 = 先完成用户主任务的定稿动作，**再追加本仪式**，不跳过主任务。
+**触发方式**：`/wrap-up` 命令；或会话中出现收尾意图关键词（「收尾」「定稿」「复盘」「总结一下」）且当前任务已完结时执行本 skill。「定稿」场景 = 先完成用户主任务的定稿动作，**再追加本仪式**，不跳过主任务。
 
 ## 特殊情况
 
